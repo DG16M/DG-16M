@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="DG16M: A Large-Scale Dataset for Dual-Arm Grasping with Force-Optimized Grasps">
+    <meta name="description" content="DG16M: A Large-Scale Dataset for Dual-Arm Grasping with Force-Optimized Grasps">
     <meta name="keywords" content="dual arm, dual arm grasps, dataset, manipulation">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DG16M</title>
@@ -33,7 +32,7 @@
 </head>
 
 <body>
-    
+
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
@@ -44,9 +43,11 @@
 
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://researchweb.iiit.ac.in/~md.faizal/" target="_blank">Md Faizal Kairm</a><sup>1⭐</sup>,</span>
+                                <a href="https://researchweb.iiit.ac.in/~md.faizal/" target="_blank">Md Faizal
+                                    Kairm</a><sup>1⭐</sup>,</span>
                             <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=G7yds6UAAAAJ&hl=en" target="_blank">Mohammed Saad Hashmi</a><sup>1⭐</sup>,</span>
+                                <a href="https://scholar.google.com/citations?user=G7yds6UAAAAJ&hl=en"
+                                    target="_blank">Mohammed Saad Hashmi</a><sup>1⭐</sup>,</span>
                             <span class="author-block">
                                 <a href="#" target="_blank">Shreya Bollimuntha</a><sup>1</sup>,
                             </span>
@@ -79,8 +80,7 @@
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <span class="link-block">
-                                    <a href="#"
-                                        class="external-link button is-normal is-rounded is-dark">
+                                    <a href="./static/DG16M_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-file-pdf"></i>
                                         </span>
@@ -89,8 +89,7 @@
                                 </span>
 
                                 <span class="link-block">
-                                    <a href="#"
-                                        class="external-link button is-normal is-rounded is-dark">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
                                         </span>
@@ -113,6 +112,15 @@
                                         </span>
                                         <span>Code (coming soon)</span>
                                     </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-database"></i>
+                                        </span>
+                                        <span>Download Dataset</span>
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -126,27 +134,27 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered video-container">
                 <video autoplay muted loop playsinline>
-                    <source src="./static/videos/intro_30001-0500.mkv" type="video/mp4">
+                    <source src="./static/videos/intro_final0001-0500.mkv" type="video/mp4">
                 </video>
             </div>
 
     </section>
 
     <section class="section mt-3 mb-0" style="background-color: rgb(252, 252, 252);">
-        <div class="container is-max-desktop" >
+        <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-3 mt-3">Abstract</h2>
                     <div class="content has-text-justified">
-                        Dual-arm robotic grasping is crucial for handling 
-                        large objects that require stable and coordinated manipulation. 
+                        Dual-arm robotic grasping is crucial for handling
+                        large objects that require stable and coordinated manipulation.
                         While single-arm grasping has been extensively
                         studied, datasets tailored for dual-arm settings remain scarce.
                         We introduce a large-scale dataset of 16 million dual-arm
                         grasps, evaluated under improved force-closure constraints.
                         Additionally, we develop a benchmark dataset containing 300
                         objects with approximately 30,000 grasps, evaluated in a physics
-                        simulation environment, providing a better grasp quality assessment 
+                        simulation environment, providing a better grasp quality assessment
                         for dual-arm grasp synthesis methods. Finally, we
                         demonstrate the effectiveness of our dataset by training a
                         Dual-Arm Grasp Classifier network that outperforms the state-
@@ -166,13 +174,19 @@
                     <h2 class="title is-3">Dataset Generation Pipeline</h2>
                     <img src="./static/images/IROS_2025_pipeline_3.svg">
                     <div class="content has-text-justified my-4">
-                        <b>Overview of the proposed method</b>: <b>(a)</b> We start by sampling a large number of antipodal grasps on the object mesh, generate all possible grasp
-                            pairs, and apply distance-based pruning. These pairs are evaluated using an Optimizer-based Force Closure Evaluator, which checks if a valid set of contact
-                            forces can keep the object in equilibrium under an external wrench. <b>(b)</b> The optimizer solves the force closure problem by minimizing the contact forces 
-                            constrained to gripper force limits and friction cone constraints. Valid grasp pairs are identified by thresholding the loss values, ensuring that only stable grasps are retained
-                            while unstable ones are discarded. <b>(c)</b> We select a subset of objects and evaluate their grasps in simulation to construct the benchmark dataset. This
-                            evaluation provides stability ground truth values for each dual-arm grasp, offering an objective assessment that is independent of predefined grasp quality
-                            metrics or assumptions.
+                        <b>Overview of the proposed method</b>: <b>(a)</b> We start by sampling a large number of
+                        antipodal grasps on the object mesh, generate all possible grasp
+                        pairs, and apply distance-based pruning. These pairs are evaluated using an Optimizer-based
+                        Force Closure Evaluator, which checks if a valid set of contact
+                        forces can keep the object in equilibrium under an external wrench. <b>(b)</b> The optimizer
+                        solves the force closure problem by minimizing the contact forces
+                        constrained to gripper force limits and friction cone constraints. Valid grasp pairs are
+                        identified by thresholding the loss values, ensuring that only stable grasps are retained
+                        while unstable ones are discarded. <b>(c)</b> We select a subset of objects and evaluate their
+                        grasps in simulation to construct the benchmark dataset. This
+                        evaluation provides stability ground truth values for each dual-arm grasp, offering an objective
+                        assessment that is independent of predefined grasp quality
+                        metrics or assumptions.
 
                     </div>
                 </div>
@@ -260,7 +274,8 @@
         </div>
     </footer>
     <div hidden="hidden">
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=u8jCh6ASsaYQO-ecRVYjHfPLH_j28OlssYDHZDHcQOY&cl=ffffff&w=a"></script>
+        <script type="text/javascript" id="clustrmaps"
+            src="//clustrmaps.com/map_v2.js?d=u8jCh6ASsaYQO-ecRVYjHfPLH_j28OlssYDHZDHcQOY&cl=ffffff&w=a"></script>
     </div>
 
 </body>
